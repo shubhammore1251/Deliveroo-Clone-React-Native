@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -19,11 +19,15 @@ import FeaturedRow from "../components/FeaturedRow";
 
 const HomeScreen = ({ navigation }) => {
   const insets = useSafeAreaInsets();
+
+  const [featuredCategories, setFeaturedCategories] = useState([]);
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
   }, []);
+
 
   return (
     <SafeAreaView
@@ -69,9 +73,12 @@ const HomeScreen = ({ navigation }) => {
       </View>
 
       {/* Main Content Body */}
-      <ScrollView className="bg-gray-100" contentContainerStyle={{
-        paddingBottom: 120,
-      }}>
+      <ScrollView
+        className="bg-gray-100"
+        contentContainerStyle={{
+          paddingBottom: 120,
+        }}
+      >
         {/* Categories */}
         <Categories />
 
