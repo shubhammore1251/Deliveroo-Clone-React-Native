@@ -13,7 +13,7 @@ const Categories = () => {
         paddingHorizontal: 15,
         paddingTop: 10,
       }}
-      keyExtractor={(item) => `${item.id}`}
+      keyExtractor={(item) => `${item._id}`}
       renderItem={({ item }) => <CategoryCard item={item} />}
     />
   );

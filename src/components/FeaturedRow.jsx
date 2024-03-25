@@ -22,7 +22,7 @@ const FeaturedRow = ({ id, title, description }) => {
         data={restaurantData}
         showsHorizontalScrollIndicator={false}
         className="pt-4"
-        keyExtractor={(item) => `${item.id}`}
+        keyExtractor={(item) => `${item._id}`}
         renderItem={({ item }) => <ResturantCard item={item} />}
       />
     </View>

@@ -16,18 +16,12 @@ import {
 } from "react-native-heroicons/outline";
 import Categories from "../components/Categories";
 import FeaturedRow from "../components/FeaturedRow";
+import { StatusBar } from "expo-status-bar";
 
 const HomeScreen = ({ navigation }) => {
   const insets = useSafeAreaInsets();
 
   const [featuredCategories, setFeaturedCategories] = useState([]);
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerShown: false,
-    });
-  }, []);
-
 
   return (
     <SafeAreaView
@@ -35,7 +29,8 @@ const HomeScreen = ({ navigation }) => {
         paddingTop: insets.top,
       }}
       className="bg-white pt-5"
-    >
+    > 
+      <StatusBar backgroundColor='transparent'/>
       <View className="flex-row pb-3 items-center mx-2 space-x-2">
         <Image
           source={{
