@@ -80,3 +80,96 @@ export const categoryData = [
     title: "Test 5",
   },
 ];
+
+export const dishes = [
+  {
+    _id: "dish1",
+    name: "Spaghetti Bolognese",
+    short_description:
+      "A classic Italian dish made with spaghetti, meat sauce, and parmesan cheese.",
+    price: "15.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish2",
+    name: "Chicken Parmesan",
+    short_description:
+      "Breaded chicken topped with marinara sauce and melted mozzarella cheese.",
+    price: "12.50",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish3",
+    name: "Margherita Pizza",
+    short_description:
+      "A simple yet delicious pizza topped with tomato sauce, mozzarella, and basil.",
+    price: "10.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish4",
+    name: "Lasagna",
+    short_description:
+      "Layers of pasta, meat sauce, ricotta, and mozzarella baked to perfection.",
+    price: "14.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish5",
+    name: "Tiramisu",
+    short_description:
+      "Rich coffee-flavored dessert layered with ladyfingers and mascarpone cream.",
+    price: "7.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish6",
+    name: "Caesar Salad",
+    short_description:
+      "Fresh romaine lettuce tossed with Caesar dressing, croutons, and parmesan.",
+    price: "8.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish7",
+    name: "Garlic Bread",
+    short_description:
+      "Stuffed bread with garlic butter and herbs, toasted to perfection.",
+    price: "5.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish8",
+    name: "Vegetable Stir Fry",
+    short_description:
+      "A medley of fresh vegetables stir-fried with soy sauce and spices.",
+    price: "11.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish9",
+    name: "Fish and Chips",
+    short_description:
+      "Freshly battered fish served with crispy fries and tartar sauce.",
+    price: "13.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish10",
+    name: "Cheesecake",
+    short_description:
+      "Creamy cheesecake with a graham cracker crust, topped with fruit.",
+    price: "6.00",
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+];

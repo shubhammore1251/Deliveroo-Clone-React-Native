@@ -1,15 +1,31 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { ArrowLeftIcon, ChevronRightIcon, StarIcon } from "react-native-heroicons/solid";
-import { MapPinIcon, QuestionMarkCircleIcon } from "react-native-heroicons/outline";
+import {
+  ArrowLeftIcon,
+  ChevronRightIcon,
+  StarIcon,
+} from "react-native-heroicons/solid";
+import {
+  MapPinIcon,
+  QuestionMarkCircleIcon,
+} from "react-native-heroicons/outline";
+import { dishes } from "../../data/ResturantData";
+import DishRow from "../components/DishRow";
 
 const RestaurantScreen = ({ navigation, route }) => {
   const data = route.params.data;
 
   console.log(data);
   return (
-    <ScrollView>
+    <>
       <StatusBar backgroundColor="transparent" />
       <View className="relative">
         <Image
@@ -47,13 +63,17 @@ const RestaurantScreen = ({ navigation, route }) => {
             </View>
           </View>
 
-          <Text className="text-gray-500 mt-2 pb-4">{data?.short_description}</Text>
+          <Text className="text-gray-500 mt-2 pb-4">
+            {data?.short_description}
+          </Text>
         </View>
 
         <TouchableOpacity className="flex-row items-center space-x-2 p-4 border-y border-gray-300">
-            <QuestionMarkCircleIcon color="gray" opacity={0.4} size={20}/>
-            <Text className="pl-2 flex-1 text-md font-bold">Have a food allergy?</Text>
-            <ChevronRightIcon color="#00CCBB" size={20} />
+          <QuestionMarkCircleIcon color="gray" opacity={0.4} size={20} />
+          <Text className="pl-2 flex-1 text-md font-bold">
+            Have a food allergy?
+          </Text>
+          <ChevronRightIcon color="#00CCBB" size={20} />
         </TouchableOpacity>
       </View>
 
@@ -61,8 +81,18 @@ const RestaurantScreen = ({ navigation, route }) => {
         <Text className="px-4 pt-6 mb-3 font-bold text-xl">Menu</Text>
 
         {/* Dish Rows */}
+        <FlatList
+          contentContainerStyle={{
+            paddingHorizontal: 15,
+          }}
+          data={dishes}
+          showsVerticalScrollIndicator={false}
+          className="pt-2"
+          keyExtractor={(item) => `${item._id}`}
+          renderItem={({ item }) => <DishRow item={item} />}
+        />
       </View>
-    </ScrollView>
+    </>
   );
 };
 
