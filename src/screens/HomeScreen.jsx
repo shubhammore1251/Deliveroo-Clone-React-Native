@@ -29,8 +29,8 @@ const HomeScreen = ({ navigation }) => {
         paddingTop: insets.top,
       }}
       className="bg-white pt-5"
-    > 
-      <StatusBar backgroundColor='transparent'/>
+    >
+      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <View className="flex-row pb-3 items-center mx-2 space-x-2">
         <Image
           source={{

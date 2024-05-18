@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  Dimensions,
 } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
@@ -22,10 +23,11 @@ import DishRow from "../components/DishRow";
 
 const RestaurantScreen = ({ navigation, route }) => {
   const data = route.params.data;
+  const { height } = Dimensions.get("screen");
 
   console.log(data);
   return (
-    <>
+    <ScrollView>
       <StatusBar backgroundColor="transparent" />
       <View className="relative">
         <Image
@@ -77,22 +79,16 @@ const RestaurantScreen = ({ navigation, route }) => {
         </TouchableOpacity>
       </View>
 
-      <View>
+      <View className="flex-1">
         <Text className="px-4 pt-6 mb-3 font-bold text-xl">Menu</Text>
 
         {/* Dish Rows */}
-        <FlatList
-          contentContainerStyle={{
-            paddingHorizontal: 15,
-          }}
-          data={dishes}
-          showsVerticalScrollIndicator={false}
-          className="pt-2"
-          keyExtractor={(item) => `${item._id}`}
-          renderItem={({ item }) => <DishRow item={item} />}
-        />
+        {dishes &&
+          dishes.map((item) => (
+            <DishRow key={item._id} item={item} restaurantId={data?._id} />
+          ))}
       </View>
-    </>
+    </ScrollView>
   );
 };
 
