@@ -71,6 +71,12 @@ const useCartStore = create((set, get) => ({
       restaurantItems?.reduce((total, dish) => total + dish.quantity, 0) || 0
     );
   },
+  getCartTotal: (restaurantId) => {
+    const restaurantItems = get().cart[restaurantId];
+    return (
+      restaurantItems?.reduce((total, dish) => total + dish.item.price * dish.quantity, 0) || 0
+    );
+  }
 }));
 
 export default useCartStore;

@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { formatCurrency } from "../utils/formatCurrency";
 import { MinusCircleIcon, PlusCircleIcon } from "react-native-heroicons/solid";
 import useCartStore from "../store/useCartStore";
+import { useFocusEffect } from "@react-navigation/native";
 
 const DishRow = ({ item, restaurantId }) => {
   const [isPressed, setIsPressed] = useState(false);
@@ -16,12 +17,17 @@ const DishRow = ({ item, restaurantId }) => {
     (restaurant) => restaurant.dishId === item._id
   );
 
-  useEffect(() => {
-    if (dish && dish.quantity > 0) {
-      setIsPressed(true);
-    }
-  }, []);
+  useFocusEffect(
+    React.useCallback(() => {
+      if (dish && dish.quantity > 0) {
+        setIsPressed(true);
+      }else if (!dish) {
+        setIsPressed(false);
+      }
+    }, [dish])
+  );
 
+  
   return (
     <>
       <TouchableOpacity
@@ -35,7 +41,7 @@ const DishRow = ({ item, restaurantId }) => {
             <Text className="text-lg mb-1">{item.name}</Text>
             <Text className="text-gray-400">{item.short_description}</Text>
             <Text className="text-gray-600 mt-2">
-              {formatCurrency(item.price, "en-US", "USD")}
+              {formatCurrency(item.price, "en-GB", "GBP")}
             </Text>
           </View>
           <View>
