@@ -6,7 +6,9 @@ import * as Progress from 'react-native-progress';
 const PreparingOrderScreen = ({ navigation, route }) => {
  useEffect(() => {
     setTimeout(() => {
-        navigation.navigate('delivery')
+        navigation.navigate('delivery', {
+          restaurantData: route.params?.restaurantData,
+        })
     }, 4000);
  }, [])
   return (

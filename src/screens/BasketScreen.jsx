@@ -7,7 +7,11 @@ import {
   Image,
   FlatList,
 } from "react-native";
-import { MinusCircleIcon, PlusCircleIcon, XCircleIcon } from "react-native-heroicons/solid";
+import {
+  MinusCircleIcon,
+  PlusCircleIcon,
+  XCircleIcon,
+} from "react-native-heroicons/solid";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import useCartStore from "../store/useCartStore";
 import { formatCurrency } from "../utils/formatCurrency";
@@ -24,7 +28,7 @@ const BasketScreen = ({ navigation, route }) => {
     if (restaurantCart && restaurantCart.length === 0) {
       navigation.goBack();
     }
-  }, [restaurantCart])
+  }, [restaurantCart]);
 
   return (
     <SafeAreaView
@@ -83,7 +87,9 @@ const BasketScreen = ({ navigation, route }) => {
               <View className="flex-row items-center space-x-2">
                 <TouchableOpacity
                   disabled={item?.quantity > 0 ? false : true}
-                  onPress={() => removeFromCart(restaurantData?._id, item?.item?._id)}
+                  onPress={() =>
+                    removeFromCart(restaurantData?._id, item?.item?._id)
+                  }
                 >
                   <MinusCircleIcon
                     color={item?.quantity > 0 ? "#00CCBB" : "gray"}
@@ -91,7 +97,9 @@ const BasketScreen = ({ navigation, route }) => {
                   />
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => addToCart(restaurantData?._id, item?.item?._id, item?.item)}
+                  onPress={() =>
+                    addToCart(restaurantData?._id, item?.item?._id, item?.item)
+                  }
                 >
                   <PlusCircleIcon color="#00CCBB" size={25} />
                 </TouchableOpacity>
@@ -99,31 +107,48 @@ const BasketScreen = ({ navigation, route }) => {
             </View>
           )}
         />
-        
+
         {/*This subtotal, Delivery Fee, Tax, Total amount will be recieved from backend for now just we have dummy values */}
         <View className="p-5 bg-white mt-5 space-y-4">
           <View className="flex-row justify-between">
             <Text className="text-gray-400">Subtotal</Text>
-            <Text className="text-gray-400">{formatCurrency(total ?? 0, "en-GB" , "GBP")}</Text>
+            <Text className="text-gray-400">
+              {formatCurrency(total ?? 0, "en-GB", "GBP")}
+            </Text>
           </View>
 
           <View className="flex-row justify-between">
             <Text className="text-gray-400">Tax</Text>
-            <Text className="text-gray-400">{formatCurrency(1.00 ?? 0, "en-GB" , "GBP")}</Text>
+            <Text className="text-gray-400">
+              {formatCurrency(1.0 ?? 0, "en-GB", "GBP")}
+            </Text>
           </View>
 
           <View className="flex-row justify-between">
             <Text className="text-gray-400">Deivery Fee</Text>
-            <Text className="text-gray-400">{formatCurrency(5.99 ?? 0, "en-GB" , "GBP")}</Text>
+            <Text className="text-gray-400">
+              {formatCurrency(5.99 ?? 0, "en-GB", "GBP")}
+            </Text>
           </View>
 
           <View className="flex-row justify-between">
             <Text>Order Total</Text>
-            <Text className="font-extrabold">{formatCurrency(total + 1.00 + 5.99  ?? 0, "en-GB" , "GBP")}</Text>
+            <Text className="font-extrabold">
+              {formatCurrency(total + 1.0 + 5.99 ?? 0, "en-GB", "GBP")}
+            </Text>
           </View>
 
-          <TouchableOpacity className="rounded-lg bg-[#00CCBB] p-4" onPress={() => navigation.navigate('preparing_order_screen')}>
-            <Text className="text-center text-white text-lg font-bold">Place Order</Text>
+          <TouchableOpacity
+            className="rounded-lg bg-[#00CCBB] p-4"
+            onPress={() =>
+              navigation.navigate("preparing_order_screen", {
+                restaurantData: restaurantData,
+              })
+            }
+          >
+            <Text className="text-center text-white text-lg font-bold">
+              Place Order
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

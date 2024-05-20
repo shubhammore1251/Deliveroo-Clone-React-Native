@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "deliveroo-clone",
+    "name": "Deliveroo Clone",
     "slug": "deliveroo-clone",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,21 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "config": {
+        "googleMaps": {
+          "googleMapsApiKey": "AIzaSyCXM2CVmVkOsoIj3G7ZHnvZX-GycYcXMeU"
+        }
+      },
+      "package": "com.deliverooclone.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1b1942bc-acdd-4e25-93e9-6d11de8ecdfd"
+      }
     }
   }
 }
