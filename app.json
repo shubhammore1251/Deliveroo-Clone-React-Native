@@ -24,7 +24,7 @@
       },
       "config": {
         "googleMaps": {
-          "googleMapsApiKey": "AIzaSyCXM2CVmVkOsoIj3G7ZHnvZX-GycYcXMeU"
+          "apiKey": "ADD_YOUR_OWN_API_KEY_FOR_GOOGLE_MAPS"
         }
       },
       "package": "com.deliverooclone.app"
