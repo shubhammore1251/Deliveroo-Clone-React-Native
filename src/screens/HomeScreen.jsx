@@ -6,6 +6,7 @@ import {
   Image,
   TextInput,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
@@ -51,7 +52,9 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <UserIcon size={25} color="#00CCBB" />
+        <TouchableOpacity onPress={() => navigation.navigate("account")}>
+          <UserIcon size={25} color="#00CCBB" />
+        </TouchableOpacity>
       </View>
 
       {/* Search */}

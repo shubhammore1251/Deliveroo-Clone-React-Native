@@ -4,15 +4,15 @@ import { useState } from "react";
 import HomeScreen from "./src/screens/HomeScreen";
 import RestaurantScreen from "./src/screens/RestaurantScreen";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from "expo-splash-screen";
 import BasketScreen from "./src/screens/BasketScreen";
 import PreparingOrderScreen from "./src/screens/PreparingOrderScreen";
 import DeliveryScreen from "./src/screens/DeliveryScreen";
+import Account from "./src/screens/Account";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
- 
   SplashScreen.preventAutoHideAsync();
   setTimeout(SplashScreen.hideAsync, 2000);
 
@@ -27,9 +27,22 @@ export default function App() {
         >
           <Stack.Screen name="home" component={HomeScreen} />
           <Stack.Screen name="restaurant" component={RestaurantScreen} />
-          <Stack.Screen name="basket_screen" component={BasketScreen} options={{presentation: 'modal', headerShown: false}}/>
-          <Stack.Screen name="preparing_order_screen" component={PreparingOrderScreen} options={{presentation: 'fullScreenModal', headerShown: false}}/>
-          <Stack.Screen name="delivery" component={DeliveryScreen} options={{presentation: 'fullScreenModal', headerShown: false}}/>
+          <Stack.Screen
+            name="basket_screen"
+            component={BasketScreen}
+            options={{ presentation: "modal", headerShown: false }}
+          />
+          <Stack.Screen
+            name="preparing_order_screen"
+            component={PreparingOrderScreen}
+            options={{ presentation: "fullScreenModal", headerShown: false }}
+          />
+          <Stack.Screen
+            name="delivery"
+            component={DeliveryScreen}
+            options={{ presentation: "fullScreenModal", headerShown: false }}
+          />
+          <Stack.Screen name="account" component={Account} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
