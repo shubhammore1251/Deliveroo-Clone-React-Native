@@ -23,13 +23,12 @@ const HomeScreen = ({ navigation }) => {
   const insets = useSafeAreaInsets();
 
   const [featuredCategories, setFeaturedCategories] = useState([]);
-
   return (
     <SafeAreaView
       style={{
         paddingTop: insets.top,
       }}
-      className="bg-white pt-5"
+      className="bg-white"
     >
       <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <View className="flex-row pb-3 items-center mx-2 space-x-2">

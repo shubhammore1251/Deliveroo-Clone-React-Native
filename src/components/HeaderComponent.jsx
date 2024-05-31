@@ -11,7 +11,7 @@ const HeaderComponent = ({
 }) => {
   const navigation = useNavigation();
   return (
-    <View className="w-full p-1">
+    <View className="w-full p-1 bg-white">
       <View className="flex-row items-center justify-between p-2 border-b border-gray-300">
         {backButton ? (
           <TouchableOpacity onPress={() => navigation.goBack()} className="p-2">
