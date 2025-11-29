@@ -22,13 +22,15 @@
       },
       "config": {
         "googleMaps": {
-          "apiKey": "ADD_YOUR_OWN_API_KEY_FOR_GOOGLE_MAPS"
+          "apiKey": "AIzaSyCXM2CVmVkOsoIj3G7ZHnvZX-GycYcXMeU"
         }
       },
       "package": "com.deliverooclone.app"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+
+      "bundler": "metro"
     },
     "extra": {
       "eas": {

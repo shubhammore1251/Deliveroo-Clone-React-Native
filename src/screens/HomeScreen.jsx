@@ -27,6 +27,7 @@ const HomeScreen = ({ navigation }) => {
     <SafeAreaView
       style={{
         paddingTop: insets.top,
+        
       }}
       className="bg-white"
     >
