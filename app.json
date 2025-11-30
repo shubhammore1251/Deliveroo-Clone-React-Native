@@ -26,9 +26,7 @@
       "predictiveBackGestureEnabled": false,
       "softwareKeyboardLayoutMode": "pan",
       "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyCXM2CVmVkOsoIj3G7ZHnvZX-GycYcXMeU"
-        }
+
       },
       "package": "com.flavroo.app",
     },
