@@ -2,7 +2,7 @@ import { View, Text, FlatList } from "react-native";
 import React from "react";
 import CategoryCard from "./CategoryCard";
 import { categoryData } from "../../data/ResturantData";
- 
+
 const Categories = () => {
   return (
     <FlatList

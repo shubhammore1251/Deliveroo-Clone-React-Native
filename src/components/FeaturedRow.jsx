@@ -1,18 +1,19 @@
-import { View, Text, FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 import React from "react";
 import { ArrowRightIcon } from "react-native-heroicons/outline";
 import ResturantCard from "./ResturantCard";
 import { restaurantData } from "../../data/ResturantData";
+import AppText from "./AppText";
 
 const FeaturedRow = ({ id, title, description }) => {
   return (
     <View>
       <View className="mt-4 flex-row items-center justify-between px-4">
-        <Text className="font-bold text-lg">{title}</Text>
+        <AppText className="font-bold text-lg">{title}</AppText>
         <ArrowRightIcon color="#00CCBB" />
       </View>
 
-      <Text className="text-xs px-4 text-gray-500">{description}</Text>
+      <AppText className="text-xs px-4 text-gray-500">{description}</AppText>
 
       <FlatList
         horizontal

@@ -1,7 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { ArrowLeftIcon } from "react-native-heroicons/solid";
+import AppText from "./AppText";
 
 const HeaderComponent = ({
   backButton,
@@ -22,7 +23,7 @@ const HeaderComponent = ({
         )}
 
         <View className="flex-1 items-start mx-2">
-          {title ? <Text className="text-sm font-bold">{title}</Text> : null}
+          {title ? <AppText className="text-sm font-bold">{title}</AppText> : null}
 
           {bottomComponent ? <View className="">{bottomComponent}</View> : null}
         </View>

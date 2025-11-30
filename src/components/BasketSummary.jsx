@@ -1,8 +1,10 @@
-import { View, Text, TouchableOpacity, Animated, Easing } from "react-native";
+import { View, TouchableOpacity, Animated, Easing } from "react-native";
 import React, { useEffect, useRef } from "react";
 import useCartStore from "../store/useCartStore";
 import { useNavigation } from "@react-navigation/native";
 import { formatCurrency } from "../utils/formatCurrency";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import AppText from "./AppText";
 
 const BasketSummary = ({ restaurantData }) => {
   const navigation = useNavigation();
@@ -10,6 +12,7 @@ const BasketSummary = ({ restaurantData }) => {
   const total = getCartTotal(restaurantData?._id);
   const totalQuantity = getTotalQuantity(restaurantData?._id);
   const translateY = useRef(new Animated.Value(100)).current;
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     Animated.timing(translateY, {
@@ -25,7 +28,7 @@ const BasketSummary = ({ restaurantData }) => {
       style={{
         transform: [{ translateY }],
         position: "absolute",
-        bottom: 20,
+        bottom: insets.bottom,
         zIndex: 50,
         width: "100%",
       }}
@@ -38,15 +41,15 @@ const BasketSummary = ({ restaurantData }) => {
           })
         }
       >
-        <Text className="text-white font-extrabold text-lg bg-[#01A296] py-1 px-2 rounded-md">
+        <AppText className="text-white font-extrabold text-lg bg-[#01A296] py-1 px-2 rounded-md">
           {totalQuantity ?? 0}
-        </Text>
-        <Text className="font-extrabold text-center text-white text-lg">
+        </AppText>
+        <AppText className="font-extrabold text-center text-white text-lg">
           View Basket
-        </Text>
-        <Text className="text-lg text-white font-extrabold">
-          {formatCurrency(total ?? 0, "en-GB", "GBP")}
-        </Text>
+        </AppText>
+        <AppText className="text-lg text-white font-extrabold">
+          {formatCurrency(total ?? 0, "en-IN", "INR")}
+        </AppText>
       </TouchableOpacity>
     </Animated.View>
   );

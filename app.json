@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "Deliveroo Clone",
-    "slug": "deliveroo-clone",
+    "name": "Flavroo",
+    "slug": "flavroo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/image.png",
     "userInterfaceStyle": "light",
+    "scheme": "flavroo",
     "splash": {
       "image": "./assets/images/Logo/deliveroo-clone-logo.png",
       "resizeMode": "contain",
@@ -13,19 +14,23 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.flavroo.app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "softwareKeyboardLayoutMode": "pan",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyCXM2CVmVkOsoIj3G7ZHnvZX-GycYcXMeU"
         }
       },
-      "package": "com.deliverooclone.app"
+      "package": "com.flavroo.app",
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -36,6 +41,19 @@
       "eas": {
         "projectId": "1b1942bc-acdd-4e25-93e9-6d11de8ecdfd"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "useLegacyPackaging": true
+          },
+          "ios": {}
+        }
+      ]
+    ]
   }
 }

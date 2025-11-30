@@ -4,7 +4,10 @@
 //   );
 // }
 export function formatCurrency(value, locale = "en-GB", currency = "GBP") {
-  const formatter = new Intl.NumberFormat(locale, { style: "currency", currency });
+  const formatter = new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency,
+  });
   const parts = formatter.formatToParts(value);
   let result = "";
 
@@ -18,4 +21,3 @@ export function formatCurrency(value, locale = "en-GB", currency = "GBP") {
 
   return result;
 }
-

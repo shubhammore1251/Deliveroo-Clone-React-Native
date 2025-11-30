@@ -1,175 +1,291 @@
 export const restaurantData = [
   {
-    _id: 1,
-    imageUrl:
-      "https://www.thedailymeal.com/img/gallery/what-classic-american-dish-have-you-never-tried/intro-1678808409.jpg",
-    title: "Delicious Delights",
-    rating: 4.5,
-    genre: "American",
-    address: "123 Main St, City, State",
-    short_description: "A taste of home with a twist.",
-    latitude: 40.7128,
-    longitude: -74.006,
-  },
+  _id: 1,
+  imageUrl: "https://b.zmtcdn.com/data/pictures/2/36282/a65734ab025650ea5b843c15af899667.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+  title: "Cafe Mondegar",
+  rating: 4.2,
+  genre: "Cafe / Continental",
+  address: "Metro House, Colaba Causeway, Mumbai 400005, India",
+  short_description: "Retro cafe famous for Mario murals, beer & bar snacks.",
+  latitude: 18.9246,
+  longitude: 72.8312,
+},
   {
     _id: 2,
-    imageUrl:
-      "https://cdn.britannica.com/52/128652-050-14AD19CA/Maki-zushi.jpg",
-    title: "Sushi Sensation",
-    rating: 4.7,
-    genre: "Japanese",
-    address: "456 Elm St, City, State",
-    short_description: "Fresh sushi prepared daily.",
-    latitude: 34.0522,
-    longitude: -118.2437,
+    imageUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/03/a8/b8/the-moghul-room.jpg?w=900&h=-1&s=1",
+    title: "Khyber Restaurant",
+    rating: 4.3,
+    genre: "North Indian / Mughlai",
+    address: "5th Road, SV Road, Khar West, Mumbai 400052, India",
+    short_description:
+      "Long-standing favourite for flavorful North Indian, Mughlai dishes in western suburbs.",
+    latitude: 18.928602,
+    longitude: 72.831741,
   },
   {
     _id: 3,
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn8CJzksifVdnRbrX45fQmSo43tE8zuu2LTg&usqp=CAU",
-    title: "Taco Time",
-    rating: 4.2,
-    genre: "Mexican",
-    address: "789 Oak St, City, State",
-    short_description: "Spice up your day with tacos!",
-    latitude: 29.7604,
-    longitude: -95.3698,
+    imageUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/b3/a2/50/bademiya-fort.jpg?w=900&h=500&s=1",
+    title: "Bademiya",
+    rating: 4.4,
+    genre: "Street-food / Kebabs",
+    address: "Apollo Bandar, near Taj Hotel, Colaba, Mumbai 400001, India",
+    short_description:
+      "Legendary late-night kebab and rolls joint behind Taj — perfect for midnight hunger pangs.",
+    latitude: 18.921,
+    longitude: 72.8335,
   },
   {
     _id: 4,
-    imageUrl:
-      "https://cdn.shopify.com/s/files/1/0516/5052/7402/files/real_pizza_from_italy_480x480.jpg",
-    title: "Pizza Palace",
-    rating: 4.9,
-    genre: "Italian",
-    address: "101 Pine St, City, State",
-    short_description: "The best pizza in town.",
-    latitude: 41.8781,
-    longitude: -87.6298,
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkNOhEA4xDOGI5V1qhuRPTZL4AqQyfWaCIyg&s",
+    title: "Masque",
+    rating: 4.6,
+    genre: "Fine dining / Modern Indian",
+    address:
+      "Laxmi Woollen Mills, Shakti Mills Lane, Mahalaxmi, Mumbai 400011, India",
+    short_description:
+      "Contemporary restaurant known for tasting-menu and modern Indian cuisine.",
+    latitude: 19.0054,
+    longitude: 72.8229,
+  },
+  {
+    _id: 5,
+    imageUrl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/65/65/b0/we-had-best-thali-in.jpg?w=900&h=500&s=1",
+    title: "Mysore Café",
+    rating: 4.1,
+    genre: "South Indian / Udupi",
+    address: "461, Bhaudaji Road, Matunga, Mumbai 400019, India",
+    short_description:
+      "Old-school South Indian eatery serving dosas, idlis and filter coffee for decades.",
+    latitude: 19.02,
+    longitude: 72.847,
   },
 ];
 
 export const categoryData = [
   {
-    __id: 1,
+    _id: 1,
     imgUrl:
-      "https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg",
-    title: "Test 1",
+      "https://www.thespruceeats.com/thmb/gwtKeNKbXW9zyHvymWGU6DjDEus=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/the-ultimate-cheeseburger-530744755-589cfb5b3df78c475878c4da.jpg",
+    title: "American",
   },
   {
     _id: 2,
     imgUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSocQpyNsMFVLkzaCjRDwM2Q0difeMHxQRFQAnf5SC2dyLBhqKas59C9Qk4YKFoxL7jVws&usqp=CAU",
-    title: "Test 2",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFG4JL9iLo_S5ijobxkAU7Ty_oG-UsnGmYjA&s",
+    title: "Italian",
   },
   {
     _id: 3,
     imgUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTLaQovPsCNb5WpRleT6LRDJ6roep6zFrFcw&usqp=CAU",
-    title: "Test 3",
+      "https://cdn.prod.website-files.com/64931d2aee18510b47f4bb1f/64d26739f645999c3c34ffb3_6-Must-Have-Indian-Dishes-That-Everyone-Should-Try-Blog-Cover.jpeg",
+    title: "Indian",
   },
   {
     _id: 4,
-    imgUrl: "https://cdn.britannica.com/52/128652-050-14AD19CA/Maki-zushi.jpg",
-    title: "Test 4",
+    imgUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxkry9wUzZ6MZmGrRTPlbyIggvXsGM5WtEGA&s",
+    title: "Chinese",
   },
   {
     _id: 5,
     imgUrl:
-      "https://images.squarespace-cdn.com/content/v1/612d4825ee7c3b7ba3e215b7/1667458982443-N6XGU1PU7335QEMVUP7M/Delicious+food.png",
-    title: "Test 5",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8XU9iNdPenqXiT5cIvPtt6Y-7aAmwcLokdg&s",
+    title: "Mexican",
   },
 ];
 
+// Dishes mapped to specific restaurants
+// restaurantId matches _id from restaurantData
+
 export const dishes = [
+  // ☕️ Cafe Mondegar (1) – Cafe / Continental
   {
     _id: "dish1",
-    name: "Spaghetti Bolognese",
+    restaurantId: 1,
+    name: "Cheese Garlic Bread",
     short_description:
-      "A classic Italian dish made with spaghetti, meat sauce, and parmesan cheese.",
-    price: 15.30,
+      "Toasted baguette topped with garlic butter and melted cheese.",
+    price: 260, // ₹
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
   {
     _id: "dish2",
-    name: "Chicken Parmesan",
+    restaurantId: 1,
+    name: "Loaded Nachos",
     short_description:
-      "Breaded chicken topped with marinara sauce and melted mozzarella cheese.",
-    price: 12.50,
+      "Crispy nachos topped with cheese, salsa, jalapeños and sour cream.",
+    price: 380,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
   {
     _id: "dish3",
-    name: "Margherita Pizza",
+    restaurantId: 1,
+    name: "Grilled Chicken Sandwich",
     short_description:
-      "A simple yet delicious pizza topped with tomato sauce, mozzarella, and basil.",
-    price: 10.00,
+      "Grilled chicken, lettuce and house sauce in toasted bread.",
+    price: 340,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
+
+  // 🍗 Khyber Restaurant (2) – North Indian / Mughlai
   {
     _id: "dish4",
-    name: "Lasagna",
+    restaurantId: 2,
+    name: "Murgh Makhani (Butter Chicken)",
     short_description:
-      "Layers of pasta, meat sauce, ricotta, and mozzarella baked to perfection.",
-    price: 14.00,
+      "Tandoori chicken cooked in a rich, buttery tomato gravy.",
+    price: 520,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
   {
     _id: "dish5",
-    name: "Tiramisu",
+    restaurantId: 2,
+    name: "Rogan Josh",
     short_description:
-      "Rich coffee-flavored dessert layered with ladyfingers and mascarpone cream.",
-    price: 7.00,
+      "Slow-cooked mutton curry with Kashmiri spices and aromatic gravy.",
+    price: 580,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
   {
     _id: "dish6",
-    name: "Caesar Salad",
+    restaurantId: 2,
+    name: "Dal Makhani",
     short_description:
-      "Fresh romaine lettuce tossed with Caesar dressing, croutons, and parmesan.",
-    price: 8.00,
+      "Creamy black lentils simmered overnight with butter and spices.",
+    price: 360,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
   {
     _id: "dish7",
-    name: "Garlic Bread",
+    restaurantId: 2,
+    name: "Garlic Naan",
     short_description:
-      "Stuffed bread with garlic butter and herbs, toasted to perfection.",
-    price: 5.00,
+      "Soft tandoori naan brushed with garlic butter and coriander.",
+    price: 120,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
+
+  // 🥙 Bademiya (3) – Street-food / Kebabs
   {
     _id: "dish8",
-    name: "Vegetable Stir Fry",
+    restaurantId: 3,
+    name: "Chicken Seekh Kebab",
     short_description:
-      "A medley of fresh vegetables stir-fried with soy sauce and spices.",
-    price: 11.00,
+      "Minced spiced chicken skewers grilled over charcoal.",
+    price: 280,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
   {
     _id: "dish9",
-    name: "Fish and Chips",
+    restaurantId: 3,
+    name: "Mutton Boti Kebab",
     short_description:
-      "Freshly battered fish served with crispy fries and tartar sauce.",
-    price: 13.00,
+      "Juicy marinated mutton cubes char-grilled to perfection.",
+    price: 340,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
   {
     _id: "dish10",
-    name: "Cheesecake",
+    restaurantId: 3,
+    name: "Chicken Tikka Roll",
     short_description:
-      "Creamy cheesecake with a graham cracker crust, topped with fruit.",
-    price: 6.00,
+      "Roomali roti stuffed with smoky chicken tikka and chutneys.",
+    price: 220,
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish11",
+    restaurantId: 3,
+    name: "Paneer Tikka Roll",
+    short_description:
+      "Grilled paneer tikka wrapped in roti with onions and mint chutney.",
+    price: 210,
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+
+  // 🍷 Masque (4) – Fine dining / Modern Indian
+  {
+    _id: "dish12",
+    restaurantId: 4,
+    name: "Seasonal Tasting Menu (Veg)",
+    short_description:
+      "Multi-course chef’s tasting menu highlighting seasonal Indian produce.",
+    price: 3800,
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish13",
+    restaurantId: 4,
+    name: "Seasonal Tasting Menu (Non-Veg)",
+    short_description:
+      "Chef’s curated non-vegetarian tasting menu with modern Indian plates.",
+    price: 4200,
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish14",
+    restaurantId: 4,
+    name: "Smoked Beetroot Salad",
+    short_description:
+      "Smoked beetroot with citrus, nuts and herb oil – signature small plate.",
+    price: 850,
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+
+  // 🍛 Mysore Café (5) – South Indian / Udupi
+  {
+    _id: "dish15",
+    restaurantId: 5,
+    name: "Masala Dosa",
+    short_description:
+      "Crispy dosa stuffed with spiced potato, served with chutney and sambar.",
+    price: 120,
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish16",
+    restaurantId: 5,
+    name: "Idli Sambar",
+    short_description:
+      "Soft steamed idlis served with hot sambar and coconut chutney.",
+    price: 90,
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish17",
+    restaurantId: 5,
+    name: "Medu Vada",
+    short_description:
+      "Crispy lentil fritters served with sambar and chutney.",
+    price: 100,
+    image:
+      "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+  },
+  {
+    _id: "dish18",
+    restaurantId: 5,
+    name: "Filter Coffee",
+    short_description:
+      "Strong South Indian filter coffee served in traditional tumbler.",
+    price: 60,
     image:
       "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
   },
 ];
+

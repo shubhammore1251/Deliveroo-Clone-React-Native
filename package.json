@@ -1,12 +1,13 @@
 {
-  "name": "deliveroo-clone",
+  "name": "flavroo",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -14,8 +15,10 @@
     "@react-navigation/native-stack": "^6.9.17",
     "@types/react": "~19.1.10",
     "expo": "^54.0.25",
+    "expo-build-properties": "~1.0.9",
     "expo-splash-screen": "~31.0.11",
     "expo-status-bar": "~3.0.8",
+    "lucide-react-native": "^0.555.0",
     "nativewind": "^4.2.1",
     "postcss": "^8.4.23",
     "prettier-plugin-tailwindcss": "^0.5.14",
@@ -37,7 +40,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
-    "babel-preset-expo": "^54.0.7"
+    "@react-native-community/eslint-config": "^3.2.0",
+    "babel-preset-expo": "^54.0.7",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-unused-imports": "^4.3.0",
+    "prettier": "^3.7.3"
   },
   "private": true
 }

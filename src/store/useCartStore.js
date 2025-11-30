@@ -7,7 +7,7 @@ const useCartStore = create((set, get) => ({
     const restaurantItems = get().cart[restaurantId] || [];
 
     const existingDishIndex = restaurantItems.findIndex(
-      (dish) => dish.dishId === dishId
+      (dish) => dish.dishId === dishId,
     );
 
     if (existingDishIndex >= 0) {
@@ -17,7 +17,7 @@ const useCartStore = create((set, get) => ({
           [restaurantId]: restaurantItems.map((dish, index) =>
             index === existingDishIndex
               ? { ...dish, quantity: dish.quantity + quantity }
-              : dish
+              : dish,
           ),
         },
       }));
@@ -35,14 +35,14 @@ const useCartStore = create((set, get) => ({
     set((state) => {
       const restaurantItems = state.cart[restaurantId] || [];
       const dishIndex = restaurantItems.findIndex(
-        (dish) => dish.dishId === dishId
+        (dish) => dish.dishId === dishId,
       );
 
       if (dishIndex === -1) return state;
 
       const updatedItems = restaurantItems
         .map((item, index) =>
-          index === dishIndex ? { ...item, quantity: item.quantity - 1 } : item
+          index === dishIndex ? { ...item, quantity: item.quantity - 1 } : item,
         )
         .filter((item) => item.quantity > 0);
 
@@ -70,9 +70,18 @@ const useCartStore = create((set, get) => ({
     return (
       restaurantItems?.reduce(
         (total, dish) => total + dish.item.price * dish.quantity,
-        0
+        0,
       ) || 0
     );
+  },
+
+  emptyRestaurantCart: (restaurantId) => {
+    set((state) => ({
+      cart: {
+        ...state.cart,
+        [restaurantId]: [],
+      },
+    }));
   },
 }));
 

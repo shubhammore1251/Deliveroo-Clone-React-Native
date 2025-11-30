@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, TouchableOpacity, Image } from "react-native";
 import { formatCurrency } from "../utils/formatCurrency";
 import { MinusCircleIcon, PlusCircleIcon } from "react-native-heroicons/solid";
 import useCartStore from "../store/useCartStore";
 import { useFocusEffect } from "@react-navigation/native";
+import AppText from "./AppText";
 
 const DishRow = ({ item, restaurantId }) => {
   const [isPressed, setIsPressed] = useState(false);
@@ -14,20 +15,19 @@ const DishRow = ({ item, restaurantId }) => {
 
   // Find the dish in the restaurant's cart items
   const dish = restaurantItems?.find(
-    (restaurant) => restaurant.dishId === item._id
+    (restaurant) => restaurant.dishId === item._id,
   );
 
   useFocusEffect(
     React.useCallback(() => {
       if (dish && dish.quantity > 0) {
         setIsPressed(true);
-      }else if (!dish) {
+      } else if (!dish) {
         setIsPressed(false);
       }
-    }, [dish])
+    }, [dish]),
   );
 
-  
   return (
     <>
       <TouchableOpacity
@@ -38,11 +38,11 @@ const DishRow = ({ item, restaurantId }) => {
       >
         <View className="flex-row">
           <View className="flex-1 pr-2">
-            <Text className="text-lg mb-1">{item.name}</Text>
-            <Text className="text-gray-400">{item.short_description}</Text>
-            <Text className="text-gray-600 mt-2">
-              {formatCurrency(item.price, "en-GB", "GBP")}
-            </Text>
+            <AppText className="text-lg mb-1">{item.name}</AppText>
+            <AppText className="text-gray-400">{item.short_description}</AppText>
+            <AppText className="text-gray-600 mt-2">
+              {formatCurrency(item.price, "en-IN", "INR")}
+            </AppText>
           </View>
           <View>
             <Image
@@ -68,7 +68,7 @@ const DishRow = ({ item, restaurantId }) => {
                 size={40}
               />
             </TouchableOpacity>
-            <Text>{dish?.quantity ?? 0}</Text>
+            <AppText>{dish?.quantity ?? 0}</AppText>
             <TouchableOpacity
               onPress={() => addToCart(restaurantId, item._id, item)}
             >
