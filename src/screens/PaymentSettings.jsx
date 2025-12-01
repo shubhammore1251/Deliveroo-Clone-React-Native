@@ -3,34 +3,9 @@ import { View, TouchableOpacity, ScrollView, Image } from "react-native";
 import { ChevronLeft, Plus, Trash2, CreditCard, PlusIcon } from "lucide-react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AppText from "../components/AppText";
+import { cardOptions, savedUpi, upiOptions } from "../../data/data";
 
 export default function PaymentSettingsScreen({navigation}) {
-  const cardOptions = [
-    {
-      id: 1,
-      icon: "card",
-      title: "Add credit or debit cards",
-      hasAdd: true,
-    },
-    {
-      id: 2,
-      icon: "pluxee",
-      title: "Add Pluxee",
-      hasAdd: true,
-    },
-  ];
-
-  const upiOptions = [
-    { id: 1, name: "Google Pay UPI", logo: "https://www.computerhope.com/jargon/g/google-pay.png", color: "bg-white" },
-    { id: 2, name: "BHIM UPI", logo: "https://www.dealnloot.com/wp-content/uploads/2018/04/BHIM-App-Offers-300x120.png", color: "bg-white" },
-    { id: 3, name: "Paytm UPI", logo: "https://1000logos.net/wp-content/uploads/2023/03/Paytm-logo.png", color: "bg-white" },
-    { id: 6, name: "POP UPI", logo: "https://play-lh.googleusercontent.com/2rgAaFalkONLlIDl9yB5X_7IFLdKSnmj-C9_NJQPCquZls5eCUfSViCfMRCiBWeP7oHU49gf9xGMtJ5Qpb3R", color: "bg-white" },
-  ];
-
-  const savedUpi = {
-    id: "9167748753@upi",
-    logo: "https://logodix.com/logo/1645140.png",
-  };
 
   return (
     <SafeAreaView className="flex-1 bg-white">

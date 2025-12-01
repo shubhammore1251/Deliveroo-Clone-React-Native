@@ -7,9 +7,10 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { ChevronDown, Search, ChevronRight } from "lucide-react-native";
+import { ChevronDown, Search, ChevronRight, StarIcon } from "lucide-react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Constants from "expo-constants";
+import AppText from "../components/AppText";
 
 export default function OrderHistoryScreen({ navigation }) {
   const appname = Constants.expoConfig.name;
@@ -73,7 +74,7 @@ export default function OrderHistoryScreen({ navigation }) {
       {/* Header */}
       <View className="flex-row items-center justify-between px-4 py-3 border-b border-gray-200">
         <ChevronDown size={24} color="#000" onPress={() => navigation.pop()}/>
-        <Text className="text-lg font-semibold">Your Orders</Text>
+        <AppText className="text-lg font-semibold">Your Orders</AppText>
         <View style={{ width: 24 }} />
       </View>
 
@@ -103,16 +104,16 @@ export default function OrderHistoryScreen({ navigation }) {
                   <View className="flex-row items-center">
                     <Image source={{ uri: order.image ?? '' }} className="w-12 h-12 bg-gray-200 rounded-lg mr-3 shadow-sm border border-gray-200" />
                     <View className="flex-1">
-                      <Text className="text-base font-semibold">
+                      <AppText className="text-base font-semibold">
                         {order.restaurant}
-                      </Text>
-                      <Text className="text-xs text-gray-500 mt-1">
+                      </AppText>
+                      <AppText className="text-xs text-gray-500 mt-1">
                         {order.location}
-                      </Text>
+                      </AppText>
                       {order.deliveryNote && (
-                        <Text className="text-xs text-gray-500 mt-1">
+                        <AppText className="text-xs text-gray-500 mt-1">
                           {order.deliveryNote}
-                        </Text>
+                        </AppText>
                       )}
                     </View>
                   </View>
@@ -125,7 +126,7 @@ export default function OrderHistoryScreen({ navigation }) {
                         : "bg-orange-100"
                     }`}
                   >
-                    <Text
+                    <AppText
                       className={`text-xs font-medium ${
                         order.status === "Delivered"
                           ? "text-green-700"
@@ -133,15 +134,15 @@ export default function OrderHistoryScreen({ navigation }) {
                       }`}
                     >
                       {order.status}
-                    </Text>
+                    </AppText>
                   </View>
                 </View>
               </View>
 
               <TouchableOpacity className="mt-2 items-end">
-                <Text className="text-red-500 text-sm font-medium">
+                <AppText className="text-red-500 text-sm font-medium">
                   View menu →
-                </Text>
+                </AppText>
               </TouchableOpacity>
             </View>
 
@@ -161,14 +162,14 @@ export default function OrderHistoryScreen({ navigation }) {
                     />
                   </View>
                   <View className="flex-1">
-                    <Text className="text-sm">
+                    <AppText className="text-sm">
                       {item.quantity} ×{" "}
-                      <Text className="font-medium">{item.name}</Text>
-                    </Text>
+                      <AppText className="font-medium">{item.name}</AppText>
+                    </AppText>
                     {item.size && (
-                      <Text className="text-xs text-gray-500 mt-1">
+                      <AppText className="text-xs text-gray-500 mt-1">
                         {item.size}
-                      </Text>
+                      </AppText>
                     )}
                   </View>
                 </View>
@@ -178,16 +179,19 @@ export default function OrderHistoryScreen({ navigation }) {
             {/* Order Footer */}
             <View className="px-4 pb-4 flex-row items-center justify-between">
               <View>
-                <Text className="text-xs text-gray-500">{order.date}</Text>
-                <View className="flex-row items-center mt-1">
-                  <Text className="text-xs text-gray-600 mr-1">You rated</Text>
-                  {/* <View className="flex-row">{renderStars(order.rating)}</View> */}
+                <AppText className="text-xs text-gray-500">{order.date}</AppText>
+                <View className="flex-row items-center mt-2">
+                  <AppText className="text-xs text-gray-600 mr-1">You rated:</AppText>
+                 <View className="flex-row items-center gap-1">
+                   <AppText className="text-sm font-bold text-gray-500">{order.rating}</AppText>
+                   <StarIcon size={14} color="#fae018ff" fill={'#fae018ff'}/>
+                 </View>
                 </View>
               </View>
               <TouchableOpacity className="flex-row items-center">
-                <Text className="text-base font-semibold mr-1">
+                <AppText className="text-base font-semibold mr-1">
                   {order.total}
-                </Text>
+                </AppText>
                 <ChevronRight size={20} color="#666" />
               </TouchableOpacity>
             </View>
@@ -196,7 +200,7 @@ export default function OrderHistoryScreen({ navigation }) {
 
         {/* Zomato Logo */}
         <View className="items-start py-3 px-4">
-          <Text className="text-gray-300 text-3xl font-bold">{appname}</Text>
+          <AppText className="text-gray-300 text-3xl font-bold">{appname}</AppText>
         </View>
       </ScrollView>
     </SafeAreaView>

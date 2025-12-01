@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.flavroo.app"
@@ -25,19 +27,16 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "softwareKeyboardLayoutMode": "pan",
-      "config": {
-
-      },
-      "package": "com.flavroo.app",
+      "config": {},
+      "package": "com.flavroo.app"
     },
     "web": {
       "favicon": "./assets/favicon.png",
-
       "bundler": "metro"
     },
     "extra": {
       "eas": {
-        "projectId": "1b1942bc-acdd-4e25-93e9-6d11de8ecdfd"
+        "projectId": "d6eeafa3-9298-49a2-9060-050cc62c15fb"
       }
     },
     "plugins": [
@@ -47,7 +46,8 @@
           "android": {
             "enableProguardInReleaseBuilds": true,
             "enableShrinkResourcesInReleaseBuilds": true,
-            "useLegacyPackaging": true
+            "useLegacyPackaging": true,
+            "enableMinifyInReleaseBuilds": true
           },
           "ios": {}
         }

@@ -3,39 +3,10 @@ import { View, ScrollView, TouchableOpacity } from 'react-native';
 import { ChevronDown, ChevronRight, Plus, Home, Briefcase, MoreHorizontal, Share2 } from 'lucide-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AppText from '../components/AppText';
+import { addresses } from '../../data/data';
 
 export default function MyAddressesScreen({navigation}) {
-  const addresses = [
-  {
-    id: 1,
-    type: "Home",
-    icon: "home",
-    address:
-      "B-702, Rosewood Apartments, Lokhandwala Complex, Andheri West, Mumbai 400053",
-    distance: "0 m",
-    phone: "+91-9867123456"
-  },
-  {
-    id: 2,
-    type: "Work",
-    icon: "work",
-    address:
-      "902, Spectrum Tower, Mindspace, Malad West, Mumbai 400064",
-    distance: "7.8 km",
-    phone: "+91-9867123456"
-  },
-  {
-    id: 3,
-    type: "Other",
-    icon: "other",
-    address:
-      "12, Hill Road, Near St. Andrew’s Church, Bandra West, Mumbai 400050",
-    distance: "4.6 km",
-    phone: "+91-9867123456"
-  }
-];
-
-
+  
   const renderIcon = (type) => {
     if (type === "Home") {
       return <Home size={28} color="#666" strokeWidth={1.5} />;

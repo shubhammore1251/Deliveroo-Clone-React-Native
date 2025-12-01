@@ -12,7 +12,7 @@ const weightMap = {
   bold: 'PoppinsBold',
 }
 
-export default function AppText({ style, ...rest }) {
+export default function AppText({ style = {}, ...rest }) {
   const flat = Array.isArray(style) ? Object.assign({}, ...style) : style || {}
   const fam = weightMap[flat.fontWeight] || 'Poppins'
 
