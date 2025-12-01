@@ -20,18 +20,18 @@ const SplashScreen = ({ setSplashLoading }) => {
     <>
       <View
         className="flex-1 justify-center items-center"
-        style={{ height, backgroundColor: "#00CCBB" }}
+        style={{ height, backgroundColor: "#ffffffff" }}
       >
         {/* <StatusBar backgroundColor="transparent" barStyle="light-content" /> */}
         {/* <Logo /> */}
         <Image
-          source={require("../../assets/images/Logo/deliveroo-clone-logo.png")}
+          source={require("../../assets/images/Logo/lavroo-logo.png")}
           className="w-full h-64"
         />
 
-        <AppText className="text-lg text-center text-white font-bold">
-          Deliveroo Clone
-        </AppText>
+        {/* <AppText className="text-lg text-center text-white font-bold">
+          
+        </AppText> */}
       </View>
     </>
   );

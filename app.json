@@ -8,9 +8,9 @@
     "userInterfaceStyle": "light",
     "scheme": "flavroo",
     "splash": {
-      "image": "./assets/images/Logo/deliveroo-clone-logo.png",
+      "image": "./assets/images/Logo/flavroo-logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#00CCBB"
+      "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
