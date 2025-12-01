@@ -1,4 +1,7 @@
 # **Flavroo 🍔**
+
+![Flavroo Demo](./assets/flavaroo.png)
+
 *A modern food delivery app UI built with React Native + Expo*
 
 Flavroo is a **frontend-only** food delivery mobile app UI inspired by apps like Swiggy, Zomato, and Deliveroo.  
@@ -34,8 +37,6 @@ It focuses purely on **UI/UX** with smooth navigation and polished screens — *
 
 
 ## 🎥 Demo Video
-
-[![Flavroo Demo](./assets/flavaroo.png)]
 
 - **Link:** https://www.youtube.com/watch?v=HXippqe7j4E
 
