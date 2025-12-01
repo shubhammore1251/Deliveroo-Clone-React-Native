@@ -35,7 +35,9 @@ It focuses purely on **UI/UX** with smooth navigation and polished screens — *
 
 ## 🎥 Demo Video
 
-- [![Flavroo Demo](https://img.youtube.com/vi/HXippqe7j4E/0.jpg)](https://www.youtube.com/watch?v=HXippqe7j4E)
+[![Flavroo Demo](./assets/flavaroo.png)]
+
+- **Link:** https://www.youtube.com/watch?v=HXippqe7j4E
 
 ## 📦 Download APK (Release)
 
