@@ -4,7 +4,7 @@
     "slug": "flavroo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/image.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "scheme": "flavroo",
     "splash": {
@@ -17,7 +17,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.flavroo.app"
+      "bundleIdentifier": "com.flavroo.app",
+      "config": {
+        "googleMapsApiKey": "GOOGLE_MAPS_API_KEY",
+      },
     },
     "android": {
       "adaptiveIcon": {
@@ -27,7 +30,11 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "softwareKeyboardLayoutMode": "pan",
-      "config": {},
+      "config": {
+        "googleMaps": {
+          "apiKey": "GOOGLE_MAPS_API_KEY"
+        }
+      },
       "package": "com.flavroo.app"
     },
     "web": {
