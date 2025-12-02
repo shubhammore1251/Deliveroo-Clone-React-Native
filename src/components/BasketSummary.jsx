@@ -28,7 +28,7 @@ const BasketSummary = ({ restaurantData }) => {
       style={{
         transform: [{ translateY }],
         position: "absolute",
-        bottom: insets.bottom,
+        bottom: insets.bottom + 10,
         zIndex: 50,
         width: "100%",
       }}
