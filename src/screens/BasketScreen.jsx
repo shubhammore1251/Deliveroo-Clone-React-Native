@@ -153,7 +153,7 @@
 
 //           <TouchableOpacity
 //             className="rounded-lg bg-[#00CCBB] p-4 mt-4"
-//             onPress={() => {              
+//             onPress={() => {
 //               navigation.replace("preparing_order_screen", {
 //                 restaurantData: restaurantData,
 //               });
@@ -171,7 +171,6 @@
 
 // export default BasketScreen;
 
-
 import React, { useEffect, useState } from "react";
 import {
   View,
@@ -187,14 +186,24 @@ import {
   PlusCircleIcon,
   XCircleIcon,
 } from "react-native-heroicons/solid";
+import { SafeAreaView } from "react-native-safe-area-context";
 import {
-  SafeAreaView,
-} from "react-native-safe-area-context";
-import { MapPin, Phone, ChevronRight, Edit, Receipt, Home, Briefcase, X, CreditCard, Wallet } from "lucide-react-native";
+  MapPin,
+  Phone,
+  ChevronRight,
+  Edit,
+  Receipt,
+  Home,
+  Briefcase,
+  X,
+  CreditCard,
+  Wallet,
+} from "lucide-react-native";
 import useCartStore from "../store/useCartStore";
 import { formatCurrency } from "../utils/formatCurrency";
 import AppText from "../components/AppText";
 import { addresses, cardOptions, savedUpi, upiOptions } from "../../data/data";
+import { BottomSheet } from "../components/BottomSheet";
 
 const BasketScreen = ({ navigation, route }) => {
   const restaurantData = route.params?.restaurantData;
@@ -205,7 +214,10 @@ const BasketScreen = ({ navigation, route }) => {
   const [showAddressModal, setShowAddressModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [selectedAddress, setSelectedAddress] = useState(null);
-  const [selectedPayment, setSelectedPayment] = useState({ name: "Pay on delivery", type: "cod" });
+  const [selectedPayment, setSelectedPayment] = useState({
+    name: "Pay on delivery",
+    type: "cod",
+  });
 
   useEffect(() => {
     setSelectedAddress(addresses[0]);
@@ -224,7 +236,7 @@ const BasketScreen = ({ navigation, route }) => {
   };
 
   const finalTotal = total + 18;
-  const ActualTotal = finalTotal*1.2;
+  const ActualTotal = finalTotal * 1.2;
   const discountAmount = ActualTotal - finalTotal;
 
   return (
@@ -264,33 +276,50 @@ const BasketScreen = ({ navigation, route }) => {
                       {item?.item?.name ?? ""}
                     </AppText>
                     <AppText className="text-sm text-gray-600 mt-1">
-                      {formatCurrency(item?.item?.price * item?.quantity ?? 0, "en-IN", "INR")}
+                      {formatCurrency(
+                        item?.item?.price * item?.quantity ?? 0,
+                        "en-IN",
+                        "INR"
+                      )}
                     </AppText>
                   </View>
                   <View className="flex-row items-center">
                     <TouchableOpacity
                       disabled={item?.quantity === 0}
-                      onPress={() => removeFromCart(restaurantData?._id, item?.item?._id)}
+                      onPress={() =>
+                        removeFromCart(restaurantData?._id, item?.item?._id)
+                      }
                     >
-                      <MinusCircleIcon color={item?.quantity > 0 ? "#00CCBB" : "gray"} size={26} />
+                      <MinusCircleIcon
+                        color={item?.quantity > 0 ? "#00CCBB" : "gray"}
+                        size={26}
+                      />
                     </TouchableOpacity>
                     <AppText className="text-[#00CCBB] mx-3 font-semibold text-base">
                       {item?.quantity ?? 0}
                     </AppText>
                     <TouchableOpacity
-                      onPress={() => addToCart(restaurantData?._id, item?.item?._id, item?.item)}
+                      onPress={() =>
+                        addToCart(
+                          restaurantData?._id,
+                          item?.item?._id,
+                          item?.item
+                        )
+                      }
                     >
                       <PlusCircleIcon color="#00CCBB" size={26} />
                     </TouchableOpacity>
                   </View>
                 </View>
               )}
-              ItemSeparatorComponent={() => <View className="h-px bg-gray-100" />}
+              ItemSeparatorComponent={() => (
+                <View className="h-px bg-gray-100" />
+              )}
             />
           </View>
 
           {/* Delivery Address */}
-          <TouchableOpacity 
+          <TouchableOpacity
             className="bg-white mx-0 mt-1 p-4"
             activeOpacity={0.8}
             onPress={() => setShowAddressModal(true)}
@@ -326,7 +355,7 @@ const BasketScreen = ({ navigation, route }) => {
           </View>
 
           {/* Total Bill */}
-          <TouchableOpacity 
+          <TouchableOpacity
             className="bg-white mx-0 mt-0.5 p-4"
             activeOpacity={0.8}
           >
@@ -334,14 +363,25 @@ const BasketScreen = ({ navigation, route }) => {
               <Receipt size={22} color="#8a8585ff" strokeWidth={2} />
               <View className="flex-1 ml-3 mr-2">
                 <View className="flex-row items-center flex-wrap">
-                  <AppText className="text-gray-700 font-semibold text-base">Total Bill </AppText>
-                  <AppText className="text-gray-400 line-through text-base">₹{ActualTotal?.toFixed(2)}</AppText>
-                  <AppText className="text-gray-700 text-base font-bold ml-1"> ₹{finalTotal?.toFixed(2)}</AppText>
+                  <AppText className="text-gray-700 font-semibold text-base">
+                    Total Bill{" "}
+                  </AppText>
+                  <AppText className="text-gray-400 line-through text-base">
+                    ₹{ActualTotal?.toFixed(2)}
+                  </AppText>
+                  <AppText className="text-gray-700 text-base font-bold ml-1">
+                    {" "}
+                    ₹{finalTotal?.toFixed(2)}
+                  </AppText>
                   <View className="ml-2 bg-blue-500 px-2 py-1 rounded">
-                    <AppText className="text-white text-xs font-medium">You saved ₹{discountAmount?.toFixed(2)}</AppText>
+                    <AppText className="text-white text-xs font-medium">
+                      You saved ₹{discountAmount?.toFixed(2)}
+                    </AppText>
                   </View>
                 </View>
-                <AppText className="text-gray-400 text-sm mt-1">Incl. taxes and charges</AppText>
+                <AppText className="text-gray-400 text-sm mt-1">
+                  Incl. taxes and charges
+                </AppText>
               </View>
               <ChevronRight size={22} color="#8a8585ff" />
             </View>
@@ -353,7 +393,8 @@ const BasketScreen = ({ navigation, route }) => {
               CANCELLATION POLICY
             </AppText>
             <AppText className="text-gray-600 text-sm leading-5">
-              Help us reduce food waste by avoiding cancellations after placing your order. A 100% cancellation fee will be applied.
+              Help us reduce food waste by avoiding cancellations after placing
+              your order. A 100% cancellation fee will be applied.
             </AppText>
           </View>
 
@@ -361,32 +402,40 @@ const BasketScreen = ({ navigation, route }) => {
         </ScrollView>
 
         {/* Bottom Payment Section */}
-         <View className="bg-white border-t border-gray-200 px-4 pt-2 pb-3">
+        <View className="bg-white border-t border-gray-200 px-4 pt-2 pb-3">
           <View className="flex-row items-center justify-between">
-            <TouchableOpacity 
+            <TouchableOpacity
               className="flex-1 flex-row items-center"
               onPress={() => setShowPaymentModal(true)}
             >
               {selectedPayment.logo && (
-                <Image 
-                  source={{ uri: selectedPayment.logo }} 
-                  className="w-10 h-10 rounded-lg mr-3" 
+                <Image
+                  source={{ uri: selectedPayment.logo }}
+                  className="w-10 h-10 rounded-lg mr-3"
                   resizeMode="contain"
                 />
               )}
-              {selectedPayment.type === 'cod' && (
+              {selectedPayment.type === "cod" && (
                 <View className="w-10 h-10 bg-gray-100 rounded-lg items-center justify-center mr-3">
                   <Wallet size={24} color="#000" />
                 </View>
               )}
               <View className="flex-1">
                 <View className="flex-row items-center mb-1">
-                  <AppText className="text-gray-500 text-xs mr-1">PAY USING</AppText>
+                  <AppText className="text-gray-500 text-xs mr-1">
+                    PAY USING
+                  </AppText>
                   <AppText className="text-gray-500 text-xs">▲</AppText>
                 </View>
-                <AppText className="font-bold text-base">{selectedPayment.name}</AppText>
+                <AppText className="font-bold text-base">
+                  {selectedPayment.name}
+                </AppText>
                 <AppText className="text-gray-500 text-xs">
-                  {selectedPayment.type === 'cod' ? 'UPI/Cash' : selectedPayment.type === 'upi' ? selectedPayment.id || 'UPI' : 'Card'}
+                  {selectedPayment.type === "cod"
+                    ? "UPI/Cash"
+                    : selectedPayment.type === "upi"
+                      ? selectedPayment.id || "UPI"
+                      : "Card"}
                 </AppText>
               </View>
             </TouchableOpacity>
@@ -399,117 +448,184 @@ const BasketScreen = ({ navigation, route }) => {
               }}
             >
               <View className="mr-3">
-                <AppText className="text-white text-xs font-medium">₹{total + 18}</AppText>
+                <AppText className="text-white text-xs font-medium">
+                  ₹{total + 18}
+                </AppText>
                 <AppText className="text-white text-xs">TOTAL</AppText>
               </View>
-              <AppText className="text-white text-lg font-bold">Place Order ▶</AppText>
+              <AppText className="text-white text-lg font-bold">
+                Place Order ▶
+              </AppText>
             </TouchableOpacity>
           </View>
         </View>
 
         {/* Address Selection Modal */}
-        <Modal visible={showAddressModal} animationType="slide" transparent={true}>
-          <View className="flex-1 bg-black/50">
-            <TouchableOpacity className="flex-1" onPress={() => setShowAddressModal(false)} />
-            <View className="bg-white rounded-t-3xl max-h-[80%]">
-              <View className="flex-row items-center justify-between p-4 border-b border-gray-200">
-                <AppText className="text-lg font-bold">Select Address</AppText>
-                <TouchableOpacity onPress={() => setShowAddressModal(false)}>
-                  <X size={24} color="#000" />
-                </TouchableOpacity>
-              </View>
-              <ScrollView className="p-4">
-                {addresses.map((address) => (
-                  <TouchableOpacity
-                    key={address.id}
-                    className={`mb-3 p-4 rounded-xl border ${selectedAddress?.id === address.id ? 'border-[#00CCBB] bg-[#00CCBB]/5' : 'border-gray-200 bg-white'}`}
-                    onPress={() => {
-                      setSelectedAddress(address);
-                      setShowAddressModal(false);
-                    }}
-                  >
-                    <View className="flex-row items-start">
-                      <View className="mr-3">{renderAddressIcon(address.type)}</View>
-                      <View className="flex-1">
-                        <AppText className="text-base font-semibold mb-1">{address.type}</AppText>
-                        <AppText className="text-sm text-gray-600 leading-5">{address.address}</AppText>
-                        <AppText className="text-xs text-gray-500 mt-2">{address.distance}</AppText>
-                      </View>
-                    </View>
-                  </TouchableOpacity>
-                ))}
-              </ScrollView>
-            </View>
+        <BottomSheet
+          visible={showAddressModal}
+          onClose={() => setShowAddressModal(false)}
+        >
+          {/* Header */}
+          <View
+            className="flex-row items-center justify-between px-4 pb-3 pt-3 border-b border-gray-200 bg-white"
+            style={{ zIndex: 10 }}
+          >
+            <AppText className="text-lg font-bold">Select Address</AppText>
+            <TouchableOpacity onPress={() => setShowAddressModal(false)}>
+              <X size={24} color="#000" />
+            </TouchableOpacity>
           </View>
-        </Modal>
+
+          {/* Scrollable content */}
+          <ScrollView
+            className="px-4 pt-3"
+            contentContainerStyle={{ paddingBottom: 40 }}
+            showsVerticalScrollIndicator={false}
+          >
+            {addresses.map((address) => (
+              <TouchableOpacity
+                key={address.id}
+                className={`mb-3 p-4 rounded-xl border ${
+                  selectedAddress?.id === address.id
+                    ? "border-[#00CCBB] bg-[#00CCBB]/5"
+                    : "border-gray-200 bg-white"
+                }`}
+                onPress={() => {
+                  setSelectedAddress(address);
+                  setShowAddressModal(false);
+                }}
+              >
+                <View className="flex-row items-start">
+                  <View className="mr-3">
+                    {renderAddressIcon(address.type)}
+                  </View>
+                  <View className="flex-1">
+                    <AppText className="text-base font-semibold mb-1">
+                      {address.type}
+                    </AppText>
+                    <AppText className="text-sm text-gray-600 leading-5">
+                      {address.address}
+                    </AppText>
+                    <AppText className="text-xs text-gray-500 mt-2">
+                      {address.distance}
+                    </AppText>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </BottomSheet>
 
         {/* Payment Selection Modal */}
-          <Modal visible={showPaymentModal} animationType="slide" transparent={true}>
-          <View className="flex-1 bg-black/50">
-            <TouchableOpacity className="flex-1" onPress={() => setShowPaymentModal(false)} />
-            <View className="bg-white rounded-t-3xl max-h-[80%]">
-              <View className="flex-row items-center justify-between p-4 border-b border-gray-200">
-                <AppText className="text-lg font-bold">Payment Method</AppText>
-                <TouchableOpacity onPress={() => setShowPaymentModal(false)}>
-                  <X size={24} color="#000" />
-                </TouchableOpacity>
-              </View>
-              <ScrollView className="p-4">
-                <AppText className="text-xs font-semibold tracking-widest text-gray-500 mb-3">UPI</AppText>
-                {upiOptions.map((upi) => (
-                  <TouchableOpacity
-                    key={upi.id}
-                    className="flex-row items-center bg-gray-50 rounded-xl p-4 mb-3"
-                    onPress={() => {
-                      setSelectedPayment({ name: upi.name, type: 'upi', logo: upi.logo });
-                      setShowPaymentModal(false);
-                    }}
-                  >
-                    <Image source={{ uri: upi.logo }} className="w-12 h-12 rounded-lg bg-white" resizeMode="contain" />
-                    <AppText className="flex-1 ml-3 text-base font-medium">{upi.name}</AppText>
-                  </TouchableOpacity>
-                ))}
-                <TouchableOpacity
-                  className="flex-row items-center bg-gray-50 rounded-xl p-4 mb-3"
-                  onPress={() => {
-                    setSelectedPayment({ name: savedUpi.id, type: 'upi', id: savedUpi.id, logo: savedUpi.logo });
-                    setShowPaymentModal(false);
-                  }}
-                >
-                  <Image source={{ uri: savedUpi.logo }} className="w-12 h-12 rounded-lg bg-white" resizeMode="contain" />
-                  <AppText className="flex-1 ml-3 text-base font-medium">{savedUpi.id}</AppText>
-                </TouchableOpacity>
-
-                <AppText className="text-xs font-semibold tracking-widest text-gray-500 mb-3 mt-4">CARDS</AppText>
-                {cardOptions.map((card) => (
-                  <TouchableOpacity
-                    key={card.id}
-                    className="flex-row items-center bg-gray-50 rounded-xl p-4 mb-3"
-                  >
-                    <View className="w-12 h-12 bg-white rounded-lg items-center justify-center">
-                      <CreditCard size={24} color="#000" />
-                    </View>
-                    <AppText className="flex-1 ml-3 text-base font-medium">{card.title}</AppText>
-                  </TouchableOpacity>
-                ))}
-
-                <AppText className="text-xs font-semibold tracking-widest text-gray-500 mb-3 mt-4">OTHER</AppText>
-                <TouchableOpacity
-                  className="flex-row items-center bg-gray-50 rounded-xl p-4 mb-3"
-                  onPress={() => {
-                    setSelectedPayment({ name: 'Pay on delivery', type: 'cod', logo: null });
-                    setShowPaymentModal(false);
-                  }}
-                >
-                  <View className="w-12 h-12 bg-white rounded-lg items-center justify-center">
-                    <Wallet size={24} color="#000" />
-                  </View>
-                  <AppText className="flex-1 ml-3 text-base font-medium">Pay on delivery</AppText>
-                </TouchableOpacity>
-              </ScrollView>
-            </View>
+        <BottomSheet
+          visible={showPaymentModal}
+          onClose={() => setShowPaymentModal(false)}
+        >
+          <View className="flex-row items-center justify-between px-4 pb-3 border-b border-gray-200">
+            <AppText className="text-lg font-bold">Payment Method</AppText>
+            <TouchableOpacity onPress={() => setShowPaymentModal(false)}>
+              <X size={24} color="#000" />
+            </TouchableOpacity>
           </View>
-        </Modal>
+
+          <ScrollView
+            className="px-4 pt-2"
+            contentContainerStyle={{ paddingBottom: 40 }} // <- space at bottom
+            bounces={false}
+            showsVerticalScrollIndicator={false}
+          >
+            <AppText className="text-sm font-semibold tracking-widest text-gray-500 mb-3">
+              UPI
+            </AppText>
+
+            {upiOptions.map((upi) => (
+              <TouchableOpacity
+                key={upi.id}
+                className="flex-row items-center bg-gray-50 rounded-xl p-4 mb-3"
+                onPress={() => {
+                  setSelectedPayment({
+                    name: upi.name,
+                    type: "upi",
+                    logo: upi.logo,
+                  });
+                  setShowPaymentModal(false);
+                }}
+              >
+                <Image
+                  source={{ uri: upi.logo }}
+                  className="w-12 h-12 rounded-lg bg-white"
+                  resizeMode="contain"
+                />
+                <AppText className="flex-1 ml-3 text-base font-medium">
+                  {upi.name}
+                </AppText>
+              </TouchableOpacity>
+            ))}
+
+            <TouchableOpacity
+              className="flex-row items-center bg-gray-50 rounded-xl p-4 mb-3"
+              onPress={() => {
+                setSelectedPayment({
+                  name: savedUpi.id,
+                  type: "upi",
+                  id: savedUpi.id,
+                  logo: savedUpi.logo,
+                });
+                setShowPaymentModal(false);
+              }}
+            >
+              <Image
+                source={{ uri: savedUpi.logo }}
+                className="w-12 h-12 rounded-lg bg-white"
+                resizeMode="contain"
+              />
+              <AppText className="flex-1 ml-3 text-base font-medium">
+                {savedUpi.id}
+              </AppText>
+            </TouchableOpacity>
+
+            <AppText className="text-sm font-semibold tracking-widest text-gray-500 mb-3 mt-4">
+              CARDS
+            </AppText>
+
+            {cardOptions.map((card) => (
+              <TouchableOpacity
+                key={card.id}
+                className="flex-row items-center bg-gray-50 rounded-xl p-4 mb-3"
+              >
+                <View className="w-12 h-12 bg-white rounded-lg items-center justify-center">
+                  <CreditCard size={24} color="#000" />
+                </View>
+                <AppText className="flex-1 ml-3 text-base font-medium">
+                  {card.title}
+                </AppText>
+              </TouchableOpacity>
+            ))}
+
+            <AppText className="text-sm font-semibold tracking-widest text-gray-500 mb-3 mt-4">
+              OTHER
+            </AppText>
+
+            <TouchableOpacity
+              className="flex-row items-center bg-gray-50 rounded-xl p-4 mb-3"
+              onPress={() => {
+                setSelectedPayment({
+                  name: "Pay on delivery",
+                  type: "cod",
+                  logo: null,
+                });
+                setShowPaymentModal(false);
+              }}
+            >
+              <View className="w-12 h-12 bg-white rounded-lg items-center justify-center">
+                <Wallet size={24} color="#000" />
+              </View>
+              <AppText className="flex-1 ml-3 text-base font-medium">
+                Pay on delivery
+              </AppText>
+            </TouchableOpacity>
+          </ScrollView>
+        </BottomSheet>
       </View>
     </SafeAreaView>
   );
