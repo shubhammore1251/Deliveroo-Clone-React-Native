@@ -42,9 +42,7 @@ It focuses purely on **UI/UX** with smooth navigation and polished screens — *
 
 ## 📦 Download APK (Release)
 
-> 🔗 *APK link will be added after EAS production build.*
-
-- Will be uploaded soon.
+-  ***🔗 Link:** https://tinyurl.com/flavrooapp
 
 ## 🛠️ Installation & Running Locally
 
