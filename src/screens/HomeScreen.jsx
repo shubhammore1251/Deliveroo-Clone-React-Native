@@ -62,7 +62,9 @@ const HomeScreen = ({ navigation }) => {
           <MagnifyingGlassIcon size={25} color="#00CCBB" />
           <TextInput
             placeholder="Resturants and Cuisines"
+            placeholderTextColor={"#838282ff"}
             keyboardType="default"
+            className="text-gray-900"
           />
         </View>
 
